@@ -12,8 +12,11 @@ bool b=true;
 
 while (b)
 {
-    powNumA = NumberInput("Степень должна быть натуральным числом, повторите ввод степени: ");
-    if (powNumA<1) b=true;
+    if (powNumA<1)
+    {
+        powNumA = NumberInput("Степень должна быть натуральным числом, повторите ввод степени: ");
+        b=true;
+    }
     else break;
 }
 
