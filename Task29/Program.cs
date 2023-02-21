@@ -10,19 +10,32 @@ int max = NumberInput("Введите максимальный элемент м
 
 int[] nums = ArrayGeneration(lngth, min, max);
 
-Console.Write($" -> [{String.Join(", ", nums)}]");
-Console.WriteLine();
+
+Console.WriteLine("Генерируемый массив: ");
+PrintArray(nums);
+Console.Write(" -> [");
+PrintArray(nums);
+Console.WriteLine($"]");
+
+void PrintArray(int[] a)
+{
+    
+    for (int i=0; i<a.Length;i++)
+    {
+        Console.Write($"{a[i]}");
+        if (i<a.Length-1)Console.Write($", ");
+    }
+    
+}
 
 int[] ArrayGeneration(int lngth, int min, int max)
 {
-    Console.WriteLine("Генерируемый массив: ");
     int[] array = new int[lngth];
+    Random rand = new Random();
     for (int i = 0; i<lngth;i++)
     {
-        int value = new Random().Next(min,max+1);
+        int value = rand.Next(min,max+1);
         array[i] = value;
-        Console.Write($"{value}");
-        if (i<lngth-1) Console.Write($", ");
     }
     return array;
 }
