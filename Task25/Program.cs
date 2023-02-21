@@ -19,8 +19,16 @@ int NumberInput(string msg)
 
 double PowerNumber(int a, int b)
 {
-    double result = Math.Pow(a,b);
+    if (b==0) return 1;
+    else
+    {
+    double result = a;
+    for(int i=1;i<b;i++)
+    {
+        result=result*a;
+    }
     return(result);
+    }
 }
 
 void PowerOutput(int a, int b)
