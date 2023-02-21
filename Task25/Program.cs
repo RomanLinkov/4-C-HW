@@ -7,7 +7,10 @@ Console.Clear();
 
 int numA = NumberInput("Введите число: ");
 int powNumA = NumberInput("Введите степень этого числа: ");
-PowerOutput(numA, powNumA);
+
+double result = PowerNumber(numA,powNumA);
+
+PowerOutput(numA, powNumA, result);
 
 int NumberInput(string msg)
 {
@@ -31,7 +34,7 @@ double PowerNumber(int a, int b)
     }
 }
 
-void PowerOutput(int a, int b)
+void PowerOutput(int a, int b, double x)
 {
-    Console.WriteLine($"{a}, {b} -> {PowerNumber(a,b)}");
+    Console.WriteLine($"{a}, {b} -> {x}");
 }
