@@ -8,9 +8,18 @@ Console.Clear();
 int numA = NumberInput("Введите число: ");
 int powNumA = NumberInput("Введите степень этого числа: ");
 
-double result = PowerNumber(numA,powNumA);
+bool b=true;
 
-PowerOutput(numA, powNumA, result);
+while (b)
+{
+    powNumA = NumberInput("Степень должна быть натуральным числом, повторите ввод степени: ");
+    if (powNumA<1) b=true;
+    else break;
+}
+
+double result=PowerNumber(numA,powNumA);
+
+PowerOutput(numA,powNumA, result);
 
 int NumberInput(string msg)
 {
